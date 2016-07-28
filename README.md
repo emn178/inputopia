@@ -6,7 +6,7 @@ A framework allows you customize form input. And you can use it by HTML input ta
 
 ## Download
 [Compress](https://raw.github.com/emn178/formosa/master/build/formosa.min.js)  
-[Uncompress](https://raw.github.com/emn178/formosa/master/src/formosa.js)
+[Uncompress](https://raw.github.com/emn178/formosa/master/build/formosa.js)
 
 ## Installation
 You can also install formosa by using Bower.
