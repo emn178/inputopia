@@ -65,6 +65,7 @@ formosa.types.date.vendor = 'bootstrap-datepicker';
 
 ## Plugins
 Currently formosa implement following plugins. You need to install the dependent libraries for the input type you want to use.
+
 Input|Vendor|Description|Requirement
 ---|---|---|---
 date|jquery-ui|Date Picker|[jQuery UI](https://jqueryui.com/)
