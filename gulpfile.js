@@ -15,7 +15,7 @@ gulp.task('default', function () {
 });
 
 gulp.task('build', ['convert-css'], function () {
-  return merge(gulp.src('src/formosa.js'), gulp.src('build/formosa.css.js'))
+  return merge(gulp.src('src/formosa.js'), gulp.src('build/formosa.css.js'), gulp.src('src/plugins/*.js'))
     .pipe(concat('formosa.js'))
     .pipe(gulp.dest('build'))
     .pipe(concat('formosa.min.js'))

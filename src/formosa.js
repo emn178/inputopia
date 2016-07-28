@@ -1,7 +1,7 @@
 /**
  * [formosa]{@link https://github.com/emn178/formosa}
  *
- * @version 0.1.0
+ * @version 0.1.1
  * @author Chen, Yi-Cyuan [emn178@gmail.com]
  * @copyright Chen, Yi-Cyuan 2016
  * @license MIT
