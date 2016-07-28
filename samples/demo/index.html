@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>formosa</title>
+  <meta name="viewport" content="user-scalable=no, width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="https://cdn.rawgit.com/emn178/jquery-stickit/master/build/jquery.stickit.min.js"></script>
+  <script type="text/javascript" src="../../src/formosa.js"></script>
+  <script type="text/javascript" src="../../build/formosa.css.js"></script>
+
+  <!-- date -->
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/eternicode/bootstrap-datepicker/master/dist/css/bootstrap-datepicker3.min.css">
+  <script src="https://cdn.rawgit.com/eternicode/bootstrap-datepicker/master/dist/js/bootstrap-datepicker.min.js"></script>
+
+  <script type="text/javascript" src="../../src/plugins/date.js"></script>
+
+  <!-- datetime -->
+  <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/css/bootstrap-datetimepicker.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+  <script src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="../../src/plugins/datetime.js"></script>
+
+  <!-- color -->
+  <script src="https://rawgit.com/PitPik/tinyColorPicker/6d4af8d7b87007007104e4b04313399455635f4f/jqColorPicker.min.js"></script>
+  <script src="https://cdn.rawgit.com/emn178/kolor-picker/master/build/kolor-picker.min.js"></script>
+  <script type="text/javascript" src="../../src/plugins/color.js"></script>
+
+  <!-- intl-tel -->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jackocnr/intl-tel-input/master/build/css/intlTelInput.css">
+  <script src="https://cdn.rawgit.com/jackocnr/intl-tel-input/master/build/js/intlTelInput.min.js"></script>
+  <script src="https://cdn.rawgit.com/jackocnr/intl-tel-input/master/build/js/utils.js"></script>
+  <script type="text/javascript" src="../../src/plugins/intl-tel.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if (location.protocol != 'file:') {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44208259-3', 'auto');
+      ga('send', 'pageview');
+    }
+  </script>
+</head>
+<body>
+  <div id="header">
+    <h1>formosa</h1>
+    <a href="https://github.com/emn178/formosa"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+  </div>
+  <div id="body">
+    <div id="description">
+      <p>
+        You can submit form to see what parameters post.
+      </p>
+    </div>
+    <div id="demo">
+      <div class="code-block">
+        <h2>Date</h2>
+        <h3>jquery-ui</h3>
+        <p>formosa uses jQuery datepicker for date input in default.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: html">
+          &lt;input name=&quot;date&quot; type=&quot;date&quot; value=&quot;2016-01-01&quot; 
+          data-options=&#39;{&quot;dateFormat&quot;: &quot;yy-mm-dd&quot;}&#39; /&gt;
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form action="http://www.w3schools.com/html/action_page.php" method="GET" target="result">
+            <input name="date" type="date" value="2016-01-01" 
+            data-options='{"dateFormat": "yy-mm-dd"}' />
+            <button class="btn btn-default">Submit</button>
+          </form>
+        </div>
+        <hr/>
+        <h3>bootstrap-datepicker</h3>
+        <p>formosa also supports Bootstrap datepicker for date input. You can use <em>data-vendor</em> to specify.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: html">
+          &lt;input name=&quot;date&quot; type=&quot;date&quot; value=&quot;2016-01-01&quot; data-vendor=&quot;bootstrap-datepicker&quot;
+          data-options=&#39;{&quot;format&quot;: &quot;yyyy-mm-dd&quot;}&#39; /&gt;
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form action="http://www.w3schools.com/html/action_page.php" method="GET" target="result">
+            <input name="date" type="date" value="2016-01-01" data-vendor="bootstrap-datepicker"
+            data-options='{"format": "yyyy-mm-dd"}' />
+            <button class="btn btn-default">Submit</button>
+          </form>
+        </div>
+        <hr/>
+        <h3>Browser Default</h3>
+        <p>You can use <em>data-norender</em> if you want to use browser default input.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: html">
+          &lt;input name=&quot;date&quot; type=&quot;date&quot; value=&quot;2016-01-01&quot; data-norender /&gt;
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form action="http://www.w3schools.com/html/action_page.php" method="GET" target="result">
+            <input name="date" type="date" value="2016-01-01" data-norender />
+            <button class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="code-block">
+        <h2>Datetime</h2>
+        <h3>bootstrap-datetimepicker</h3>
+        <p>formosa uses Bootstrap datetimepicker for datetime input. You can set a default options for specific type.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: js">
+          formosa.types.datetime.options = {
+            format: &#39;YYYY-MM-DD HH:mm&#39;
+          };
+        </pre>
+        <pre class="brush: html">
+          &lt;input name=&quot;datetime&quot; type=&quot;datetime&quot; value=&quot;2016-01-01T00:00:00+08:00&quot; /&gt;
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form action="http://www.w3schools.com/html/action_page.php" method="GET" target="result">
+            <input name="datetime" type="datetime" value="2016-01-01T00:00:00+08:00" />
+            <script>
+              formosa.types.datetime.options = {
+                format: 'YYYY-MM-DD HH:mm'
+              };
+            </script>
+            <button class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="code-block">
+        <h2>Color</h2>
+        <h3>kolor-picker</h3>
+        <p>formosa uses kolor-picker for color input. You can also set options by using JavaScript.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: html">
+          &lt;input id=&quot;color&quot; name=&quot;color&quot; type=&quot;color&quot; value=&quot;rgba(0,0,0,1)&quot; /&gt;
+          &lt;span id=&quot;color-text&quot;&gt;&lt;/span&gt;
+        </pre>
+        <pre class="brush: js">
+          $(document).ready(function () {
+            $(&#39;#color&#39;).data(&#39;options&#39;, {
+              onSelect: function (color) {
+                $(&#39;#color-text&#39;).text(color);
+              }
+            });
+          });
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form action="http://www.w3schools.com/html/action_page.php" method="GET" target="result">
+            <input id="color" name="color" type="color" value="rgba(0,0,0,1)" />
+            <script>
+              $(document).ready(function () {
+                $('#color').data('options', {
+                  onSelect: function (color) {
+                    $('#color-text').text(color);
+                  }
+                });
+              });
+            </script>
+            <button class="btn btn-default">Submit</button>
+            <span id="color-text"></span>
+          </form>
+        </div>
+      </div>
+      <div class="code-block">
+        <h2>International Telephone</h2>
+        <h3>intl-tel-input</h3>
+        <p>intl-tel is custom input type. formosa uses intl-tel-input for this.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: html">
+          &lt;input name=&quot;tel&quot; type=&quot;intl-tel&quot; value=&quot;+886987654321&quot; /&gt;
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form action="http://www.w3schools.com/html/action_page.php" method="GET" target="result">
+            <input name="tel" type="intl-tel" value="+886987654321" />
+            <button class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="result">
+      <iframe name="result" frameborder="0"></iframe>
+    </div>
+  </div>
+  <div id="footer">
+    © 2016 formosa Demo and server side hosted by w3schools.
+  </div>
+  <script>
+    $('#result').stickit();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.js"></script>
+  <script>
+    SyntaxHighlighter.all();
+  </script>
+</body>
+</html>

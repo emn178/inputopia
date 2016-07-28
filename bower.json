@@ -1,0 +1,12 @@
+{
+  "name": "formosa",
+  "version": "0.1.0",
+  "main": ["build/formosa.js"],
+  "ignore": [
+    "samples",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.7"
+  }
+}
