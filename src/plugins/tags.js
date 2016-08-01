@@ -5,7 +5,7 @@
     tagsInput.find('a').toggle(!value);
   }
 
-  formosa.register('jquery-tags-input', 'tags', {
+  inputopia.register('jquery-tags-input', 'tags', {
     available: function () {
       return $.fn.tagsInput;
     },
@@ -20,7 +20,7 @@
     }
   });
 
-  formosa.register('bootstrap-tags-input', 'tags', {
+  inputopia.register('bootstrap-tags-input', 'tags', {
     available: function () {
       return $.fn.tagsinput;
     },

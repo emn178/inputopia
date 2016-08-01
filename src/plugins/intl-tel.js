@@ -1,5 +1,5 @@
 (function ($) {
-  formosa.register('intl-tel', 'intl-tel', {
+  inputopia.register('intl-tel', 'intl-tel', {
     available: function () {
       return $.fn.intlTelInput;
     },

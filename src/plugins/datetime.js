@@ -1,5 +1,5 @@
 (function ($) {
-  formosa.register('bootstrap-datetimepicker', 'datetime', {
+  inputopia.register('bootstrap-datetimepicker', 'datetime', {
     available: function () {
       return $.fn.datetimepicker;
     },

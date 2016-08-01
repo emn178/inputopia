@@ -15,10 +15,10 @@ gulp.task('default', function () {
 });
 
 gulp.task('build', ['convert-css'], function () {
-  return merge(gulp.src('src/formosa.js'), gulp.src('build/formosa.css.js'), gulp.src('src/plugins/*.js'))
-    .pipe(concat('formosa.js'))
+  return merge(gulp.src('src/inputopia.js'), gulp.src('build/inputopia.css.js'), gulp.src('src/plugins/*.js'))
+    .pipe(concat('inputopia.js'))
     .pipe(gulp.dest('build'))
-    .pipe(concat('formosa.min.js'))
+    .pipe(concat('inputopia.min.js'))
     .pipe(uglify({ preserveComments: 'license' }))
     .pipe(gulp.dest('build'));
 });
@@ -27,10 +27,10 @@ gulp.task('convert-css', convertCss);
 
 function convertCss() {
   return gulp.src('src/**/*.css')
-    .pipe(concat('formosa.css.js'))
+    .pipe(concat('inputopia.css.js'))
     .pipe(minifyCss({ compatibility: 'ie8' }))
-    .pipe(cssToJs({ variable: 'formosa.css' }))
-    .pipe(concat('formosa.css.js'))
+    .pipe(cssToJs({ variable: 'inputopia.css' }))
+    .pipe(concat('inputopia.css.js'))
     .pipe(gulp.dest('build'));
 }
 

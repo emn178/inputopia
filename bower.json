@@ -1,7 +1,7 @@
 {
-  "name": "formosa",
+  "name": "inputopia",
   "version": "0.2.0",
-  "main": ["build/formosa.js"],
+  "main": ["build/inputopia.js"],
   "ignore": [
     "samples",
     "tests"

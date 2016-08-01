@@ -1,7 +1,7 @@
 (function ($) {
   var colorPicker  = $();
 
-  formosa.register('kolor-picker', 'color', {
+  inputopia.register('kolor-picker', 'color', {
     available: function () {
       if ($.fn.kolorPicker) {
         $(document).on('page:before-unload', function() {

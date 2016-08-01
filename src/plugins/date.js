@@ -3,7 +3,7 @@
     $.fn.bootstrapDP = $.fn.datepicker.noConflict();
   }
 
-  formosa.register('jquery-ui', 'date', {
+  inputopia.register('jquery-ui', 'date', {
     available: function () {
       return $.fn.datepicker;
     },
@@ -21,12 +21,12 @@
     }
   });
 
-  formosa.register('bootstrap-datepicker', 'date', {
+  inputopia.register('bootstrap-datepicker', 'date', {
     available: function () {
       return $.fn.bootstrapDP;
     },
     render: function (options) {
-      $(this).attr('type', 'text').on('mousedown', formosa._readonly).bootstrapDP(options).mousedown();
+      $(this).attr('type', 'text').on('mousedown', inputopia._readonly).bootstrapDP(options).mousedown();
     }
   });
 })(jQuery);

@@ -1,17 +1,17 @@
-# formosa
+# inputopia
 A framework allows you customize form input. And you can use it by HTML input tag.
 
 ## Demo
-[Demo](https://emn178.github.io/formosa/samples/demo/)
+[Demo](https://emn178.github.io/inputopia/samples/demo/)
 
 ## Download
-[Compress](https://raw.github.com/emn178/formosa/master/build/formosa.min.js)  
-[Uncompress](https://raw.github.com/emn178/formosa/master/build/formosa.js)
+[Compress](https://raw.github.com/emn178/inputopia/master/build/inputopia.min.js)  
+[Uncompress](https://raw.github.com/emn178/inputopia/master/build/inputopia.js)
 
 ## Installation
-You can also install formosa by using Bower.
+You can also install inputopia by using Bower.
 ```
-bower install formosa
+bower install inputopia
 ```
 
 ## Usage
@@ -81,14 +81,14 @@ element.input();
 You can set up default options for specific type by this:
 ```JavaScript
 // set up default options for 'datetime' input type
-formosa.types.datetime.options = {
+inputopia.types.datetime.options = {
   format: 'YYYY-MM-DD HH:mm'
 };
 ```
 Or you want to set up default options for specific type under specific vendor:
 ```JavaScript
 // set up default options for 'datetime' input type under vendor 'bootstrap-datetimepicker'
-formosa.vendors['bootstrap-datetimepicker'].datetime.options = {
+inputopia.vendors['bootstrap-datetimepicker'].datetime.options = {
   format: 'YYYY-MM-DD HH:mm'
 };
 ```
@@ -100,11 +100,11 @@ element options > vendor default options > type default options
 If you have multiple vendors with the same type, you can specify the vendor by `data-vendor`. The first one registered will be default vendor. You can also set up default vendor by this:
 ```JavaScript
 // set the 'bootstrap-datepicker' as default vendor of 'date' input type
-formosa.types.date.vendor = 'bootstrap-datepicker';
+inputopia.types.date.vendor = 'bootstrap-datepicker';
 ```
 
 ## Plugins
-Currently formosa implement following plugins. You need to install the dependent libraries for the input type you want to use.
+Currently inputopia implement following plugins. You need to install the dependent libraries for the input type you want to use.
 
 Input|Vendor|Description|Requirement
 ---|---|---|---
@@ -122,5 +122,5 @@ tags|bootstrap-tags-input|Tags|[Bootstrap Tags Input](https://github.com/bootstr
 The project is released under the [MIT license](http://www.opensource.org/licenses/MIT).
 
 ## Contact
-The project's website is located at https://github.com/emn178/formosa  
+The project's website is located at https://github.com/emn178/inputopia  
 Author: Chen, Yi-Cyuan (emn178@gmail.com)

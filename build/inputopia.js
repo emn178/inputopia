@@ -1,5 +1,5 @@
 /**
- * [formosa]{@link https://github.com/emn178/formosa}
+ * [inputopia]{@link https://github.com/emn178/inputopia}
  *
  * @version 0.2.0
  * @author Chen, Yi-Cyuan [emn178@gmail.com]
@@ -100,7 +100,7 @@
   };
 
   $(document).on('ready page:load', function () {
-    $('<style>' + formosa.css + '</style>').appendTo('head');
+    $('<style>' + inputopia.css + '</style>').appendTo('head');
     setTimeout(renderAll);
   });
 
@@ -111,7 +111,7 @@
     }
   }
 
-  window.formosa = $.formosa = {
+  window.inputopia = $.inputopia = {
     _readonly: readonly,
     render: renderAll,
     register: register,
@@ -120,11 +120,11 @@
   };
 })(jQuery);
 
-formosa.css=".kolor-picker-input{width:35px;height:30px;border:1px solid #000;text-indent:-999px;cursor:default}.kolor-picker-input:focus{outline-offset:0;outline:0}.kolor-picker-wrapper{position:relative;display:inline-flex;background-image:url(data:image/gif;base64,R0lGODlhDAAMAIABAMzMzP///yH5BAEAAAEALAAAAAAMAAwAAAIWhB+ph5ps3IMyQFBvzVRq3zmfGC5QAQA7)}.kolor-picker-readonly{display:none;position:absolute;top:0;left:0;width:35px;height:30px}.kolor-picker-input[readonly]+.kolor-picker-readonly{display:block;cursor:not-allowed}";
+inputopia.css=".kolor-picker-input{width:35px;height:30px;border:1px solid #000;text-indent:-999px;cursor:default}.kolor-picker-input:focus{outline-offset:0;outline:0}.kolor-picker-wrapper{position:relative;display:inline-flex;background-image:url(data:image/gif;base64,R0lGODlhDAAMAIABAMzMzP///yH5BAEAAAEALAAAAAAMAAwAAAIWhB+ph5ps3IMyQFBvzVRq3zmfGC5QAQA7)}.kolor-picker-readonly{display:none;position:absolute;top:0;left:0;width:35px;height:30px}.kolor-picker-input[readonly]+.kolor-picker-readonly{display:block;cursor:not-allowed}";
 (function ($) {
   var colorPicker  = $();
 
-  formosa.register('kolor-picker', 'color', {
+  inputopia.register('kolor-picker', 'color', {
     available: function () {
       if ($.fn.kolorPicker) {
         $(document).on('page:before-unload', function() {
@@ -168,7 +168,7 @@ formosa.css=".kolor-picker-input{width:35px;height:30px;border:1px solid #000;te
     $.fn.bootstrapDP = $.fn.datepicker.noConflict();
   }
 
-  formosa.register('jquery-ui', 'date', {
+  inputopia.register('jquery-ui', 'date', {
     available: function () {
       return $.fn.datepicker;
     },
@@ -186,18 +186,18 @@ formosa.css=".kolor-picker-input{width:35px;height:30px;border:1px solid #000;te
     }
   });
 
-  formosa.register('bootstrap-datepicker', 'date', {
+  inputopia.register('bootstrap-datepicker', 'date', {
     available: function () {
       return $.fn.bootstrapDP;
     },
     render: function (options) {
-      $(this).attr('type', 'text').on('mousedown', formosa._readonly).bootstrapDP(options).mousedown();
+      $(this).attr('type', 'text').on('mousedown', inputopia._readonly).bootstrapDP(options).mousedown();
     }
   });
 })(jQuery);
 
 (function ($) {
-  formosa.register('bootstrap-datetimepicker', 'datetime', {
+  inputopia.register('bootstrap-datetimepicker', 'datetime', {
     available: function () {
       return $.fn.datetimepicker;
     },
@@ -235,7 +235,7 @@ formosa.css=".kolor-picker-input{width:35px;height:30px;border:1px solid #000;te
 })(jQuery);
 
 (function ($) {
-  formosa.register('intl-tel', 'intl-tel', {
+  inputopia.register('intl-tel', 'intl-tel', {
     available: function () {
       return $.fn.intlTelInput;
     },
@@ -267,12 +267,12 @@ formosa.css=".kolor-picker-input{width:35px;height:30px;border:1px solid #000;te
 })(jQuery);
 
 (function ($) {
-  formosa.register('jquery-ui-month-picker', 'month', {
+  inputopia.register('jquery-ui-month-picker', 'month', {
     available: function () {
       return $.fn.datepicker;
     },
     render: function (options) {
-      $(this).attr('type', 'text').on('mousedown click', formosa._readonly).MonthPicker(options);
+      $(this).attr('type', 'text').on('mousedown click', inputopia._readonly).MonthPicker(options);
     }
   });
 })(jQuery);
@@ -284,7 +284,7 @@ formosa.css=".kolor-picker-input{width:35px;height:30px;border:1px solid #000;te
     tagsInput.find('a').toggle(!value);
   }
 
-  formosa.register('jquery-tags-input', 'tags', {
+  inputopia.register('jquery-tags-input', 'tags', {
     available: function () {
       return $.fn.tagsInput;
     },
@@ -299,7 +299,7 @@ formosa.css=".kolor-picker-input{width:35px;height:30px;border:1px solid #000;te
     }
   });
 
-  formosa.register('bootstrap-tags-input', 'tags', {
+  inputopia.register('bootstrap-tags-input', 'tags', {
     available: function () {
       return $.fn.tagsinput;
     },
