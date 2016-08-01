@@ -36,6 +36,46 @@ Examples
 <!-- Use browser default color input -->
 <input type="color" data-norender />
 ```
+### Methods
+Because some plugins maybe hide the origin input, you should use input() method as the standard interface. You can access value or attribute of the input.
+
+#### value(value)
+
+Get or set input value.
+
+##### *value: `String`*
+
+Value to set. Get if undefined.
+
+#### disabled(value)
+
+Get or set input disabled attribute.
+
+##### *value: `Boolean`*
+
+Status to set. Get if undefined.
+
+#### readonly(value)
+
+Get or set input readonly attribute.
+
+##### *value: `Boolean`*
+
+Status to set. Get if undefined.
+
+Examples
+```JavaScript
+element.input('value');           // get value
+element.input('value', value);    // set value
+element.input('disabled');        // get disabled
+element.input('disabled', true);  // set disabled
+element.input('readonly');        // get readonly
+element.input('readonly', true);  // set readonly
+
+// render when creating element programmatically
+element.input();
+```
+
 
 ### Settings
 You can set up default options for specific type by this:
@@ -72,7 +112,7 @@ date|jquery-ui|Date Picker|[jQuery UI](https://jqueryui.com/)
 date|bootstrap-datepicker|Date Picker|[bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
 datetime|bootstrap-datetimepicker|Datetime Picker|[Bootstrap 3 Datepicker](https://eonasdan.github.io/bootstrap-datetimepicker/)
 month|jquery-ui-month-picker|Month Picker|[jQuery UI Month Picker](https://github.com/KidSysco/jquery-ui-month-picker)
-color|kolor-picker|Color Picker|[kolor-picker](https://jqueryui.com/)
+color|kolor-picker|Color Picker|[kolor-picker](https://github.com/emn178/kolor-picker)
 intl-tel|intl-tel-input|International Telephone|[International Telephone Input](https://github.com/jackocnr/intl-tel-input)
 tags|jquery-tags-input|Tags|[jQuery Tags Input](https://github.com/xoxco/jQuery-Tags-Input)
 tags|bootstrap-tags-input|Tags|[Bootstrap Tags Input](https://github.com/bootstrap-tagsinput/bootstrap-tagsinput)
