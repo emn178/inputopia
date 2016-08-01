@@ -71,8 +71,12 @@ Input|Vendor|Description|Requirement
 date|jquery-ui|Date Picker|[jQuery UI](https://jqueryui.com/)
 date|bootstrap-datepicker|Date Picker|[bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
 datetime|bootstrap-datetimepicker|Datetime Picker|[Bootstrap 3 Datepicker](https://eonasdan.github.io/bootstrap-datetimepicker/)
+month|jquery-ui-month-picker|Month Picker|[jQuery UI Month Picker](https://github.com/KidSysco/jquery-ui-month-picker)
 color|kolor-picker|Color Picker|[kolor-picker](https://jqueryui.com/)
 intl-tel|intl-tel-input|International Telephone|[International Telephone Input](https://github.com/jackocnr/intl-tel-input)
+tags|jquery-tags-input|Tags|[jQuery Tags Input](https://github.com/xoxco/jQuery-Tags-Input)
+tags|bootstrap-tags-input|Tags|[Bootstrap Tags Input](https://github.com/bootstrap-tagsinput/bootstrap-tagsinput)
+
 
 ## License
 The project is released under the [MIT license](http://www.opensource.org/licenses/MIT).

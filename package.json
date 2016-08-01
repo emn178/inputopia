@@ -1,6 +1,6 @@
 {
   "name": "formosa",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A framework allows you customize form input. And you can use it by HTML input tag.",
   "main": "build/formosa.js",
   "devDependencies": {

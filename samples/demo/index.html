@@ -7,37 +7,70 @@
   <meta name="apple-mobile-web-app-capable" content="no">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="https://cdn.rawgit.com/emn178/jquery-stickit/master/build/jquery.stickit.min.js"></script>
-  <script type="text/javascript" src="../../src/formosa.js"></script>
-  <script type="text/javascript" src="../../build/formosa.css.js"></script>
+  <script src="../../src/formosa.js"></script>
+  <script src="../../build/formosa.css.js"></script>
 
-  <!-- date -->
+  <!-- type: date -->
+  <!-- vendor: jquery-ui -->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
   <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
+  <!-- vendor: bootstrap-datepicker -->
   <link rel="stylesheet" href="https://cdn.rawgit.com/eternicode/bootstrap-datepicker/master/dist/css/bootstrap-datepicker3.min.css">
   <script src="https://cdn.rawgit.com/eternicode/bootstrap-datepicker/master/dist/js/bootstrap-datepicker.min.js"></script>
 
-  <script type="text/javascript" src="../../src/plugins/date.js"></script>
+  <!-- plugin -->
+  <script src="../../src/plugins/date.js"></script>
 
-  <!-- datetime -->
-  <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <!-- type: datetime -->
+  <!-- vendor: bootstrap-datepicker -->
   <link rel="stylesheet" href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/css/bootstrap-datetimepicker.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
   <script src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/js/bootstrap-datetimepicker.min.js"></script>
-  <script type="text/javascript" src="../../src/plugins/datetime.js"></script>
 
-  <!-- color -->
+  <!-- plugin -->
+  <script src="../../src/plugins/datetime.js"></script>
+
+  <!-- type: month -->
+  <!-- vendor: jquery-ui-month-picker -->
+  <link rel="stylesheet" href="https://kidsysco.github.io/jquery-ui-month-picker/MonthPicker.min.css">
+  <script src="https://kidsysco.github.io/jquery-ui-month-picker/MonthPicker.min.js"></script>
+
+  <!-- plugin -->
+  <script src="../../src/plugins/month.js"></script>
+
+  <!-- type: color -->
+  <!-- vendor: kolor-picker -->
   <script src="https://rawgit.com/PitPik/tinyColorPicker/6d4af8d7b87007007104e4b04313399455635f4f/jqColorPicker.min.js"></script>
   <script src="https://cdn.rawgit.com/emn178/kolor-picker/master/build/kolor-picker.min.js"></script>
-  <script type="text/javascript" src="../../src/plugins/color.js"></script>
 
-  <!-- intl-tel -->
+  <!-- plugin -->
+  <script src="../../src/plugins/color.js"></script>
+
+  <!-- type: intl-tel -->
+  <!-- vendor: intl-tel-input -->
   <link rel="stylesheet" href="https://cdn.rawgit.com/jackocnr/intl-tel-input/master/build/css/intlTelInput.css">
   <script src="https://cdn.rawgit.com/jackocnr/intl-tel-input/master/build/js/intlTelInput.min.js"></script>
   <script src="https://cdn.rawgit.com/jackocnr/intl-tel-input/master/build/js/utils.js"></script>
-  <script type="text/javascript" src="../../src/plugins/intl-tel.js"></script>
+
+  <!-- plugin -->
+  <script src="../../src/plugins/intl-tel.js"></script>
+
+  <!-- type: tags -->
+  <!-- vendor: jquert-tags-input -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/xoxco/jQuery-Tags-Input/master/dist/jquery.tagsinput.min.css">
+  <script src="https://cdn.rawgit.com/xoxco/jQuery-Tags-Input/master/dist/jquery.tagsinput.min.js"></script>
+
+  <!-- vendor: bootstrap-tags-input -->
+  <link rel="stylesheet" type="text/css" href="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+  <script src="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+  
+
+  <!-- plugin -->
+  <script src="../../src/plugins/tags.js"></script>
 
   <link rel="stylesheet" href="style.css">
   <script>
@@ -67,34 +100,38 @@
       <div class="code-block">
         <h2>Date</h2>
         <h3>jquery-ui</h3>
-        <p>formosa uses jQuery datepicker for date input in default.</p>
+        <p>jQuery UI datepicker for date input.</p>
         <h4>Source Code</h4>
         <pre class="brush: html">
-          &lt;input name=&quot;date&quot; type=&quot;date&quot; value=&quot;2016-01-01&quot; 
-          data-options=&#39;{&quot;dateFormat&quot;: &quot;yy-mm-dd&quot;}&#39; /&gt;
+          &lt;input class=&quot;form-control&quot; name=&quot;date&quot; type=&quot;date&quot; value=&quot;2016-01-01&quot; 
+            data-options=&#39;{&quot;dateFormat&quot;: &quot;yy-mm-dd&quot;}&#39; /&gt;
         </pre>
         <h4>Result</h4>
         <div class="result">
-          <form action="https://httpbin.org/get" method="GET" target="result">
-            <input name="date" type="date" value="2016-01-01" 
+          <form class="form-inline" action="https://httpbin.org/get" method="GET" target="result">
+            <input class="form-control" name="date" type="date" value="2016-01-01" 
             data-options='{"dateFormat": "yy-mm-dd"}' />
-            <button class="btn btn-default">Submit</button>
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
           </form>
         </div>
         <hr/>
         <h3>bootstrap-datepicker</h3>
-        <p>formosa also supports Bootstrap datepicker for date input. You can use <em>data-vendor</em> to specify.</p>
+        <p>bootstrap-datepicker for date input. You can use <em>data-vendor</em> to specify.</p>
         <h4>Source Code</h4>
         <pre class="brush: html">
-          &lt;input name=&quot;date&quot; type=&quot;date&quot; value=&quot;2016-01-01&quot; data-vendor=&quot;bootstrap-datepicker&quot;
-          data-options=&#39;{&quot;format&quot;: &quot;yyyy-mm-dd&quot;}&#39; /&gt;
+          &lt;input class=&quot;form-control&quot; name=&quot;date&quot; type=&quot;date&quot; value=&quot;2016-01-01&quot;
+            data-vendor=&quot;bootstrap-datepicker&quot; data-options=&#39;{&quot;format&quot;: &quot;yyyy-mm-dd&quot;}&#39; /&gt;
         </pre>
         <h4>Result</h4>
         <div class="result">
-          <form action="https://httpbin.org/get" method="GET" target="result">
-            <input name="date" type="date" value="2016-01-01" data-vendor="bootstrap-datepicker"
-            data-options='{"format": "yyyy-mm-dd"}' />
-            <button class="btn btn-default">Submit</button>
+          <form class="form-inline" action="https://httpbin.org/get" method="GET" target="result">
+            <input class="form-control" name="date" type="date" value="2016-01-01"
+            data-vendor="bootstrap-datepicker" data-options='{"format": "yyyy-mm-dd"}' />
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
           </form>
         </div>
         <hr/>
@@ -102,20 +139,24 @@
         <p>You can use <em>data-norender</em> if you want to use browser default input.</p>
         <h4>Source Code</h4>
         <pre class="brush: html">
-          &lt;input name=&quot;date&quot; type=&quot;date&quot; value=&quot;2016-01-01&quot; data-norender /&gt;
+          &lt;input class=&quot;form-control&quot; name=&quot;date&quot; type=&quot;date&quot;
+            value=&quot;2016-01-01&quot; data-norender /&gt;
         </pre>
         <h4>Result</h4>
         <div class="result">
-          <form action="https://httpbin.org/get" method="GET" target="result">
-            <input name="date" type="date" value="2016-01-01" data-norender />
-            <button class="btn btn-default">Submit</button>
+          <form class="form-inline" action="https://httpbin.org/get" method="GET" target="result">
+            <input class="form-control" name="date" type="date"
+              value="2016-01-01" data-norender />
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
           </form>
         </div>
       </div>
       <div class="code-block">
         <h2>Datetime</h2>
         <h3>bootstrap-datetimepicker</h3>
-        <p>formosa uses Bootstrap datetimepicker for datetime input. You can set a default options for specific type.</p>
+        <p>bootstrap-datetimepicker for datetime input. You can set a default options for specific type.</p>
         <h4>Source Code</h4>
         <pre class="brush: js">
           formosa.types.datetime.options = {
@@ -123,28 +164,51 @@
           };
         </pre>
         <pre class="brush: html">
-          &lt;input name=&quot;datetime&quot; type=&quot;datetime&quot; value=&quot;2016-01-01T00:00:00+08:00&quot; /&gt;
+          &lt;input class=&quot;form-control&quot; name=&quot;datetime&quot; type=&quot;datetime&quot;
+            value=&quot;2016-01-01T00:00:00+08:00&quot; /&gt;
         </pre>
         <h4>Result</h4>
         <div class="result">
-          <form action="https://httpbin.org/get" method="GET" target="result">
-            <input name="datetime" type="datetime" value="2016-01-01T00:00:00+08:00" />
+          <form class="form-inline" action="https://httpbin.org/get" method="GET" target="result">
+            <input class="form-control" name="datetime" type="datetime" value="2016-01-01T00:00:00+08:00" />
             <script>
               formosa.types.datetime.options = {
                 format: 'YYYY-MM-DD HH:mm'
               };
             </script>
-            <button class="btn btn-default">Submit</button>
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
+          </form>
+        </div>
+      </div>
+      <div class="code-block">
+        <h2>Month</h2>
+        <h3>jquery-ui-month-picker</h3>
+        <p>jquery-ui-month-picker for month input.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: html">
+          &lt;input class=&quot;form-control&quot; name=&quot;month&quot; type=&quot;month&quot; value=&quot;01/2016&quot;
+            data-options=&#39;{&quot;Button&quot;: false}&#39; /&gt;
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form class="form-inline" action="https://httpbin.org/get" method="GET" target="result">
+            <input class="form-control" name="month" type="month" value="01/2016" data-options='{"Button": false}' />
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
           </form>
         </div>
       </div>
       <div class="code-block">
         <h2>Color</h2>
         <h3>kolor-picker</h3>
-        <p>formosa uses kolor-picker for color input. You can also set options by using JavaScript.</p>
+        <p>kolor-picker for color input. You can also set options by using JavaScript.</p>
         <h4>Source Code</h4>
         <pre class="brush: html">
-          &lt;input id=&quot;color&quot; name=&quot;color&quot; type=&quot;color&quot; value=&quot;rgba(0,0,0,1)&quot; /&gt;
+          &lt;input id=&quot;color&quot; class=&quot;form-control&quot; name=&quot;color&quot; type=&quot;color&quot;
+            value=&quot;rgba(0,0,0,1)&quot; /&gt;
           &lt;span id=&quot;color-text&quot;&gt;&lt;/span&gt;
         </pre>
         <pre class="brush: js">
@@ -159,7 +223,7 @@
         <h4>Result</h4>
         <div class="result">
           <form action="https://httpbin.org/get" method="GET" target="result">
-            <input id="color" name="color" type="color" value="rgba(0,0,0,1)" />
+            <input id="color" class="form-control" name="color" type="color" value="rgba(0,0,0,1)" />
             <script>
               $(document).ready(function () {
                 $('#color').data('options', {
@@ -169,7 +233,9 @@
                 });
               });
             </script>
-            <button class="btn btn-default">Submit</button>
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
             <span id="color-text"></span>
           </form>
         </div>
@@ -177,16 +243,52 @@
       <div class="code-block">
         <h2>International Telephone</h2>
         <h3>intl-tel-input</h3>
-        <p>intl-tel is custom input type. formosa uses intl-tel-input for this.</p>
+        <p>intl-tel-input for intl-tel input.</p>
         <h4>Source Code</h4>
         <pre class="brush: html">
-          &lt;input name=&quot;tel&quot; type=&quot;intl-tel&quot; value=&quot;+886987654321&quot; /&gt;
+          &lt;input class=&quot;form-control&quot; name=&quot;tel&quot; type=&quot;intl-tel&quot; value=&quot;+886987654321&quot; /&gt;
         </pre>
         <h4>Result</h4>
         <div class="result">
-          <form action="https://httpbin.org/get" method="GET" target="result">
-            <input name="tel" type="intl-tel" value="+886987654321" />
-            <button class="btn btn-default">Submit</button>
+          <form class="form-inline" action="https://httpbin.org/get" method="GET" target="result">
+            <input class="form-control" name="tel" type="intl-tel" value="+886987654321" />
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
+          </form>
+        </div>
+      </div>
+      <div class="code-block">
+        <h2>Tags</h2>
+        <h3>jquery-tags-input</h3>
+        <p>jquery-tags-input for tags input.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: html">
+          &lt;input class=&quot;form-control&quot; name=&quot;tags&quot; type=&quot;tags&quot; value=&quot;apple,banana&quot; /&gt;
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form class="form-inline" action="https://httpbin.org/get" method="GET" target="result">
+            <input class="form-control" name="tags" type="tags" value="apple,banana" />
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
+          </form>
+        </div>
+        <h3>bootstrap-tags-input</h3>
+        <p>bootstrap-tags-input for tags input.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: html">
+          &lt;input class=&quot;form-control&quot; name=&quot;tags&quot; type=&quot;tags&quot; value=&quot;apple,banana&quot;
+            data-vendor=&quot;bootstrap-tags-input&quot; /&gt;
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form class="form-inline" action="https://httpbin.org/get" method="GET" target="result">
+            <input class="form-control" name="tags" type="tags" value="apple,banana" data-vendor="bootstrap-tags-input" />
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
           </form>
         </div>
       </div>
@@ -200,6 +302,18 @@
   </div>
   <script>
     $('#result').stickit();
+    $('form').on('click', '[data-action]', function () {
+      var element = $(this);
+      var action = element.data('action');
+      var input = element.closest('form').find('.form-control');
+      if (element.hasClass('btn-default')) {
+        element.switchClass('btn-default', 'btn-success');
+        input.input(action, true);
+      } else {
+        element.switchClass('btn-success', 'btn-default');
+        input.input(action, false);
+      }
+    });
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.css" rel="stylesheet">

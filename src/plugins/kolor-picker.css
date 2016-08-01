@@ -12,6 +12,21 @@
 }
 
 .kolor-picker-wrapper {
+  position: relative;
   display: inline-flex;
   background-image: url('data:image/gif;base64,R0lGODlhDAAMAIABAMzMzP///yH5BAEAAAEALAAAAAAMAAwAAAIWhB+ph5ps3IMyQFBvzVRq3zmfGC5QAQA7');    
+}
+
+.kolor-picker-readonly {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 30px;
+}
+
+.kolor-picker-input[readonly]+.kolor-picker-readonly {
+  display: block;
+  cursor: not-allowed;
 }
