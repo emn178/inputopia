@@ -1,7 +1,7 @@
 /**
  * [inputopia]{@link https://github.com/emn178/inputopia}
  *
- * @version 0.2.0
+ * @version 0.2.1
  * @author Chen, Yi-Cyuan [emn178@gmail.com]
  * @copyright Chen, Yi-Cyuan 2016
  * @license MIT
@@ -15,7 +15,6 @@
 
   var defaultMethods = {
     value: function (args) {
-      console.log(args);
       return $.fn.val.apply(this, args);
     },
     disabled: function (args) {
@@ -61,9 +60,9 @@
       return;
     }
     handler.available = true;
-    element.data('norender', true).data('type', type);
     var options = element.data('options') || vendorSettings[vendor][type].options || typeSettings[type].options || {};
     handler.render.call(this, options);
+    element.data('norender', true).data('type', type);
   }
 
   function callMethod(args) {
@@ -95,7 +94,7 @@
   }
 
   $.fn.input = function () {
-    this.each(render);
+    this.not('[data-norender]').each(render);
     return callMethod.call(this, Array.prototype.slice.call(arguments, 0));
   };
 
@@ -121,6 +120,17 @@
 })(jQuery);
 
 inputopia.css=".kolor-picker-input{width:35px;height:30px;border:1px solid #000;text-indent:-999px;cursor:default}.kolor-picker-input:focus{outline-offset:0;outline:0}.kolor-picker-wrapper{position:relative;display:inline-flex;background-image:url(data:image/gif;base64,R0lGODlhDAAMAIABAMzMzP///yH5BAEAAAEALAAAAAAMAAwAAAIWhB+ph5ps3IMyQFBvzVRq3zmfGC5QAQA7)}.kolor-picker-readonly{display:none;position:absolute;top:0;left:0;width:35px;height:30px}.kolor-picker-input[readonly]+.kolor-picker-readonly{display:block;cursor:not-allowed}";
+(function ($) {
+  inputopia.register('jquery-ui', 'autocomplete', {
+    available: function () {
+      return $.fn.autocomplete;
+    },
+    render: function (options) {
+      $(this).autocomplete(options);
+    }
+  });
+})(jQuery);
+
 (function ($) {
   var colorPicker  = $();
 
@@ -230,6 +240,23 @@ inputopia.css=".kolor-picker-input{width:35px;height:30px;border:1px solid #000;
     },
     setDisabled: function (value) {
       $(this).prop('disabled', value).data('hidden').prop('disabled', value);
+    }
+  });
+})(jQuery);
+
+(function ($) {
+  inputopia.register('bootstrap-fileinput', 'file', {
+    available: function () {
+      return $.fn.fileinput;
+    },
+    render: function (options) {
+      $(this).fileinput(options);
+    },
+    setReadonly: function (value) {
+      $(this).prop('readonly', value).fileinput('refresh');
+    },
+    setDisabled: function (value) {
+      $(this).prop('disabled', value).fileinput('refresh');
     }
   });
 })(jQuery);

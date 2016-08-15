@@ -103,6 +103,37 @@ If you have multiple vendors with the same type, you can specify the vendor by `
 inputopia.types.date.vendor = 'bootstrap-datepicker';
 ```
 
+### Custom Plugin
+You can register your custom plugin:
+```JavaScript
+inputopia.register('myplugin', 'city', {
+  available: function () {
+    return $.fn.autocomplete;
+  },
+  render: function (options) {
+    options.source = function (request, response) {
+      $.ajax({
+        url: "http://gd.geobytes.com/AutoCompleteCity",
+        dataType: "jsonp",
+        data: {
+          q: request.term
+        },
+        success: function (data) {
+          response(data.length === 1 && data[ 0 ].length === 0 ? [] : data);
+        }
+      });
+    };
+    options.minLength = 3;
+    $(this).autocomplete(options);
+  }
+});
+```
+And you can reuse it:
+```HTML
+<input class="form-control" name="city" type="city" />
+```
+
+
 ## Plugins
 Currently inputopia implement following plugins. You need to install the dependent libraries for the input type you want to use.
 
@@ -116,6 +147,8 @@ color|kolor-picker|Color Picker|[kolor-picker](https://github.com/emn178/kolor-p
 intl-tel|intl-tel-input|International Telephone|[International Telephone Input](https://github.com/jackocnr/intl-tel-input)
 tags|jquery-tags-input|Tags|[jQuery Tags Input](https://github.com/xoxco/jQuery-Tags-Input)
 tags|bootstrap-tags-input|Tags|[Bootstrap Tags Input](https://github.com/bootstrap-tagsinput/bootstrap-tagsinput)
+file|bootstrap-fileinput|File|[bootstrap-fileinput](https://github.com/kartik-v/bootstrap-fileinput)
+autocomplete|jquery-ui|Autocomplete|[jQuery UI](https://jqueryui.com/)
 
 
 ## License

@@ -67,10 +67,24 @@
   <!-- vendor: bootstrap-tags-input -->
   <link rel="stylesheet" type="text/css" href="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
   <script src="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
-  
 
   <!-- plugin -->
   <script src="../../src/plugins/tags.js"></script>
+
+  <!-- type: file -->
+  <!-- vendor: bootstrap-fileinput -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/kartik-v/bootstrap-fileinput/master/css/fileinput.min.css">
+  <script src="https://cdn.rawgit.com/kartik-v/bootstrap-fileinput/master/js/fileinput.min.js"></script>
+
+  <!-- plugin -->
+  <script src="../../src/plugins/file.js"></script>
+
+  <!-- type: autocomplete -->
+  <!-- plugin -->
+  <script src="../../src/plugins/autocomplete.js"></script>
+
+  <!-- myplugin -->
+  <script src="city.js"></script>
 
   <link rel="stylesheet" href="style.css">
   <script>
@@ -292,20 +306,97 @@
           </form>
         </div>
       </div>
+      <div class="code-block">
+        <h2>File</h2>
+        <h3>bootstrap-fileinput</h3>
+        <p>bootstrap-fileinput for file input.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: html">
+          &lt;input class=&quot;form-control&quot; name=&quot;file&quot; type=&quot;file&quot; data-show-preview=&quot;false&quot; /&gt;
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form class="form-inline" action="https://httpbin.org/get" method="GET" target="result">
+            <input class="form-control" name="file" type="file" data-show-preview="false" />
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
+          </form>
+        </div>
+      </div>
+      <div class="code-block">
+        <h2>Autocomplete</h2>
+        <h3>jquery-ui</h3>
+        <p>jquery-ui for autocomplete input.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: html">
+          &lt;input class=&quot;form-control&quot; name=&quot;autocomplete&quot; type=&quot;autocomplete&quot; 
+            data-options=&#39;{&quot;source&quot;:[&quot;ActionScript&quot;,&quot;AppleScript&quot;,&quot;Asp&quot;,&quot;BASIC&quot;,&quot;C&quot;,&quot;C++&quot;,&quot;Clojure&quot;,&quot;COBOL&quot;,&quot;ColdFusion&quot;,&quot;Erlang&quot;,&quot;Fortran&quot;,&quot;Groovy&quot;,&quot;Haskell&quot;,&quot;Java&quot;,&quot;JavaScript&quot;,&quot;Lisp&quot;,&quot;Perl&quot;,&quot;PHP&quot;,&quot;Python&quot;,&quot;Ruby&quot;,&quot;Scala&quot;,&quot;Scheme&quot;]}&#39; /&gt;
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form class="form-inline" action="https://httpbin.org/get" method="GET" target="result">
+            <input class="form-control" name="autocomplete" type="autocomplete" data-options='{"source":["ActionScript","AppleScript","Asp","BASIC","C","C++","Clojure","COBOL","ColdFusion","Erlang","Fortran","Groovy","Haskell","Java","JavaScript","Lisp","Perl","PHP","Python","Ruby","Scala","Scheme"]}' />
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
+          </form>
+        </div>
+      </div>
+      <div class="code-block">
+        <h2>Custom Plugin</h2>
+        <p>You can register your custom plugin and reuse it.</p>
+        <h4>Source Code</h4>
+        <pre class="brush: javascript">
+          inputopia.register(&#39;myplugin&#39;, &#39;city&#39;, {
+            available: function () {
+              return $.fn.autocomplete;
+            },
+            render: function (options) {
+              options.source = function (request, response) {
+                $.ajax({
+                  url: &quot;http://gd.geobytes.com/AutoCompleteCity&quot;,
+                  dataType: &quot;jsonp&quot;,
+                  data: {
+                    q: request.term
+                  },
+                  success: function (data) {
+                    response(data.length === 1 &amp;&amp; data[ 0 ].length === 0 ? [] : data);
+                  }
+                });
+              };
+              options.minLength = 3;
+              $(this).autocomplete(options);
+            }
+          });
+        </pre>
+        <pre class="brush: html">
+          &lt;input class=&quot;form-control&quot; name=&quot;city&quot; type=&quot;city&quot; /&gt;
+        </pre>
+        <h4>Result</h4>
+        <div class="result">
+          <form class="form-inline" action="https://httpbin.org/get" method="GET" target="result">
+            <input class="form-control" name="city" type="city" />
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-default" type="button" data-action="readonly">Readonly</button>
+            <button class="btn btn-default" type="button" data-action="disabled">Disabled</button>
+          </form>
+        </div>
+      </div>
     </div>
     <div id="result">
       <iframe name="result" frameborder="0"></iframe>
     </div>
   </div>
   <div id="footer">
-    © 2016 inputopia Demo and server side hosted by w3schools.
+    © 2016 inputopia Demo and server side hosted by httpbin.org
   </div>
   <script>
     $('#result').stickit();
     $('form').on('click', '[data-action]', function () {
       var element = $(this);
       var action = element.data('action');
-      var input = element.closest('form').find('.form-control');
+      var input = element.closest('form').find('input.form-control');
       if (element.hasClass('btn-default')) {
         element.switchClass('btn-default', 'btn-success');
         input.input(action, true);

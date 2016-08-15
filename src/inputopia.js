@@ -1,7 +1,7 @@
 /**
  * [inputopia]{@link https://github.com/emn178/inputopia}
  *
- * @version 0.2.0
+ * @version 0.2.1
  * @author Chen, Yi-Cyuan [emn178@gmail.com]
  * @copyright Chen, Yi-Cyuan 2016
  * @license MIT
@@ -15,7 +15,6 @@
 
   var defaultMethods = {
     value: function (args) {
-      console.log(args);
       return $.fn.val.apply(this, args);
     },
     disabled: function (args) {
@@ -61,9 +60,9 @@
       return;
     }
     handler.available = true;
-    element.data('norender', true).data('type', type);
     var options = element.data('options') || vendorSettings[vendor][type].options || typeSettings[type].options || {};
     handler.render.call(this, options);
+    element.data('norender', true).data('type', type);
   }
 
   function callMethod(args) {
@@ -95,7 +94,7 @@
   }
 
   $.fn.input = function () {
-    this.each(render);
+    this.not('[data-norender]').each(render);
     return callMethod.call(this, Array.prototype.slice.call(arguments, 0));
   };
 
